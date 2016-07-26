@@ -20,19 +20,20 @@
 
 		<p>
 		  <strong>Color:</strong> <%= @product.color %>
-		</p>
+	 </p>
 
 		<p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
 
 		<%= form_tag("/payments/create", remote: true) do %>
 		  <%= render partial: "shared/stripe_checkout_button" %>
-			<%= hidden_field_tag(:product_id, @product.id) %>
+			 <%= hidden_field_tag(:product_id, @product.id) %>
 		<% end %>
 
 	</div>
 
 </div>
 <% end %>
+<div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 <%= render 'new_comment' %>
 
 <%= render 'comments' %>
