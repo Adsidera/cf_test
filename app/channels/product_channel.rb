@@ -8,9 +8,9 @@ class ProductChannel < ApplicationCable::Channel
 
   end
 
-  def listen
+  def listen(data)
     stop_all_streams #default method by ActionCable to stop all previous streams
-    stream_for data["product_id"] #stream from channel specific to product 
+    stream_for data["product_id"] #stream from channel specific to product
   end
 
 end
